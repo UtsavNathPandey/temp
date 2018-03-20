@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/search-filters-module/components/available-refinements/available-refinements.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/search-filters-module/components/available-refinements</a> available-refinements.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.93% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { TreeModule, TreeNode, OverlayPanelModule } from 'primeng/primeng';
+import { RefinementService } from './../../services/refinement.service';
+import { TreeDataTransformService } from './../../services/tree-data-transform.service';
+import { Refinement } from './../../models/refinement';
+import { FilterConfig, FilterParameters } from '../../models/tree-config';
+&nbsp;
+@Component({
+  selector: 'wfw-available-refinements',
+  templateUrl: './available-refinements.component.html',
+  styleUrls: ['./available-refinements.component.scss']
+})
+&nbsp;
+export class AvailableRefinementsComponent implements OnInit {
+  filters: FilterConfig;
+  dataSources: TreeNode[];
+  dataTypes: TreeNode[];
+  dataAttributes: TreeNode[];
+  selectedFile: TreeNode[];
+  subscription: Subscription;
+  filterSubscription: Subscription;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >refinementService: RefinementService<span class="branch-1 cbranch-no" title="branch not covered" >,</span></span>
+    private <span class="cstat-no" title="statement not covered" >treeDataTransformService: TreeDataTransformService<span class="branch-2 cbranch-no" title="branch not covered" >)</span> {}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.dataAttributes = [</span>
+      {
+        'label': 'Attributes',
+        'data': 'Attributes',
+        'styleClass': 'fontBold',
+        'expanded': true,
+        'children': [
+          {
+            'label': 'Project',
+            'data': 'Project',
+            'styleClass': 'fontBold',
+          },
+          {
+            'label': 'Min X',
+            'data': 'Min X',
+            'styleClass': 'fontBold',
+          },
+          {
+            'label': 'Well',
+            'data': 'Well',
+            'styleClass': 'fontBold',
+          }
+        ]
+      }
+    ];
+&nbsp;
+    // subscribe to home component messages
+<span class="cstat-no" title="statement not covered" >    this.subscription = this.refinementService.getUnAppliedRefinements().subscribe(<span class="fstat-no" title="function not covered" >(</span>removedRefinement: Refinement) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      console.log(removedRefinement);</span>
+      // Other than clear all
+<span class="cstat-no" title="statement not covered" >      if (removedRefinement.TreeNode !== '') {</span>
+        // Remove unselected item from selectedFile Array.
+<span class="cstat-no" title="statement not covered" >        this.selectedFile = this.refinementService.spliceOutNodeFromSelectedFileArray(</span>
+          removedRefinement.TreeNode, this.selectedFile);
+        // remove the any child node of the unselected node, upto 2 levels
+<span class="cstat-no" title="statement not covered" >        if (removedRefinement.TreeNode.children) {</span>
+<span class="cstat-no" title="statement not covered" >          this.selectedFile = this.refinementService.childUnselection(</span>
+            removedRefinement, this.selectedFile);
+          // Set applied refinements in the selected-refinement-component
+<span class="cstat-no" title="statement not covered" >          this.refinementService.setAppliedRefinements(this.selectedFile);</span>
+        }
+        // Service call to remove parent(s) of unselected item / mark them partially selected
+<span class="cstat-no" title="statement not covered" >        if (removedRefinement.TreeNode.parent) {</span>
+<span class="cstat-no" title="statement not covered" >          this.selectedFile = this.refinementService.parentPartialSelectionUnselection(</span>
+            removedRefinement.TreeNode.parent, this.selectedFile);
+        }
+      }
+      // Clear all
+<span class="cstat-no" title="statement not covered" >      if (!removedRefinement || removedRefinement.TreeNode === '') {</span>
+        // Run cleanup before making selectionFile Array empty
+<span class="cstat-no" title="statement not covered" >        this.selectedFile = this.refinementService.cleanUpSelectedFileArray(this.selectedFile);</span>
+<span class="cstat-no" title="statement not covered" >        this.selectedFile = [];</span>
+      }
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.filterSubscription = this.treeDataTransformService.getFilterParameters().subscribe(<span class="fstat-no" title="function not covered" >(</span>FilterParams: FilterParameters) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.filters = this.treeDataTransformService.createFilters(FilterParams);</span>
+<span class="cstat-no" title="statement not covered" >      this.dataSources = this.filters.data_sources;</span>
+<span class="cstat-no" title="statement not covered" >      this.dataTypes = this.filters.data_types;</span>
+    });
+  }
+&nbsp;
+  /**
+ * @method updateSelection
+ * @description Function to update selected refinements from the available options
+ * @param selectedFile: selected options from the available refinements
+ */
+<span class="fstat-no" title="function not covered" >  public updateSelection(</span>selectedFile: TreeNode[]): void {
+<span class="cstat-no" title="statement not covered" >    this.refinementService.setAppliedRefinements(this.selectedFile);</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 09 2017 16:58:56 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\..\sorter.js"></script>
+</body>
+</html>

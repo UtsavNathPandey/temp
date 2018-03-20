@@ -1,0 +1,26 @@
+:host /deep/ {
+  .ui-widget-content {
+  border: none;
+  font-weight: bold;
+  }
+
+  .ui-widget {
+    font-family: Arial;
+  }
+
+  .ui-treenode-leaf {
+    font-weight: normal;
+  }
+
+  .accordian-tree li:not(.ui-treenode-leaf) > .ui-treenode-content .ui-chkbox {
+    display: none;
+  }
+
+  .accordian-tree-root .ui-treenode .ui-treenode-content .ui-chkbox {
+    display: none;
+  }
+  .accordian-tree-root .ui-treenode .ui-treenode .ui-treenode-content .ui-chkbox {
+    display: inline-block;
+  }
+
+}

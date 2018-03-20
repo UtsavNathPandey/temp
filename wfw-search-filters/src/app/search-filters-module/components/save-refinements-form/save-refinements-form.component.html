@@ -1,0 +1,10 @@
+<div class="ui-g ui-fluid save-form-cls">
+  <div class="ui-g-12 ui-md-4">
+    <form [formGroup]="saveRefinementsForm">
+      <div class="ui-inputgroup">
+        <input type="text" class="save-txt--input-cls" [(ngModel)]="saveNameModel" formControlName="saveName" pInputText placeholder="Save name">
+        <button class="search-btn-cls" pButton type="button" label="Save" [disabled]="!saveRefinementsForm.valid" (click)="onSaveBtnClick()"></button>
+      </div>
+    </form>
+  </div>
+</div>

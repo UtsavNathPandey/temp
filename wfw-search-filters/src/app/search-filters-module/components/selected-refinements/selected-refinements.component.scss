@@ -1,0 +1,38 @@
+.top-container {
+  width: 18em;
+  font-family: Arial;
+}
+
+.title-container {
+  width: 3em;
+  font-weight: bold;
+}
+
+.clear-container {
+  width: 5em;
+  cursor: pointer;
+}
+
+.margin-top {
+  margin-top: .5em;
+}
+
+.margin-bottom {
+  margin-bottom: .5em;
+}
+
+.clear-all {
+  padding-left: 0.3em;
+}
+
+.save-as-form-container-cls {
+  ::ng-deep .ui-overlaypanel {
+    .ui-overlaypanel-content {
+      padding: 0;
+    }
+  }
+  .save-icon-cls {
+    cursor: pointer;
+    font-size: 20px;
+  }
+}

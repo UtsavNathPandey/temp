@@ -1,0 +1,52 @@
+{
+  "data": {
+    "dataSources": [
+      {"label": "Datasources1", "value": "Datasources1"},
+      {"label": "Datasources2", "value": "Datasources2"}
+    ],
+    "dataTypes": [
+      {"label": "Datatypes1", "value": "Datatypes1"},
+      {"label": "Datatypes2", "value": "Datatypes2"}
+    ],
+    "queryConditions":
+      {
+        "select": {
+          "options": [
+            {
+              "label": "And",
+              "value": "And"
+            },
+            {
+              "label": "Or",
+              "value": "Or"
+            }
+          ]
+        },
+        "companyName": {
+          "options": [
+            {
+              "label": "Company1",
+              "value": "Company1"
+            },
+            {
+              "label": "Company2",
+              "value": "Company2"
+            }
+          ]
+        },
+        "selectCondition": {
+          "options": [
+            {
+              "label": "test1",
+              "value": "test1"
+            },
+            {
+              "label": "test2",
+              "value": "test2"
+            }
+          ]
+        },
+        "value": ""
+      }
+  }
+}

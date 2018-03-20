@@ -1,0 +1,29 @@
+@import "~wfw-shared/style/wfw-variables";
+
+.selected-refinement-container {
+  padding: .5em 0.7em;
+  background: $halliburton-darkest-grey;
+}
+
+.selected-refinement-container:hover {
+  background: $halliburton-mid-dark-grey;
+}
+
+.selected-refinement-box {
+  display: inline-flex;
+  border-radius: 1.5em;
+  margin: .5em;
+  color: $halliburton-white;
+  font-size: x-small;
+}
+
+.label-container {
+  width: inherit;
+}
+
+.cross-button-container {
+  font-family: sans-serif;
+  cursor: pointer;
+  width: 2em;
+}
+

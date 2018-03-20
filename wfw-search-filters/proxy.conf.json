@@ -1,0 +1,17 @@
+{
+  "/searchservice/*": {
+    "target": "http://10.134.23.40:8080",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/applications/bhdm/collections/*": {
+    "target": "http://10.134.23.40:8080",
+    "sercure": false,
+    "logLevel": "debug"
+  },
+  "/solr/*": {
+    "target": "http://10.134.23.25:8880",
+    "sercure": false,
+    "logLevel": "debug"
+  }
+}

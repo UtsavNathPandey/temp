@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/search-filters-module/services/tree-data-transform.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/app/search-filters-module/services</a> tree-data-transform.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.03% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/126</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>55/120</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { TreeNode } from 'primeng/primeng';
+import { TreeConfig, FilterConfig, FilterParameters } from '../models/tree-config';
+import { ClassificationMappings,
+  ClassificationTypes,
+  ClassificationMappingItem,
+  ClassificationType } from 'wfw-shared/models/classification-type.interface';
+import { SearchResultsService } from 'wfw-shared/services/search-results.service';
+&nbsp;
+@Injectable()
+export class TreeDataTransformService {
+  private filterSubject = new Subject&lt;any&gt;();
+  private mapArr: ClassificationMappingItem[];
+  private typeArr: ClassificationType[];
+&nbsp;
+  constructor(private searchResultsService: SearchResultsService<span class="branch-1 cbranch-no" title="branch not covered" >) { }</span>
+&nbsp;
+  /**
+ * @method setFilterParameters
+ * @description Function to set the filter parameters used to create the Data Sources/Types filters
+ */
+<span class="fstat-no" title="function not covered" >  setFilterParameters(</span>filterParams: FilterParameters) {
+<span class="cstat-no" title="statement not covered" >    this.filterSubject.next(filterParams);</span>
+  }
+&nbsp;
+  /**
+ * @method getFilterParameters
+ * @description Function to register Observable to trigger the filter creation
+ */
+<span class="fstat-no" title="function not covered" >  getFilterParameters(): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.filterSubject.asObservable();</span>
+  }
+&nbsp;
+   /**
+ * @method setClassificationMappings
+ * @description Function to set the classification mappings. These are used to bunch the data types
+ */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  setClassificationMappings(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.searchResultsService.getClassificationMappings().subscribe(<span class="fstat-no" title="function not covered" >(</span>mapObj: ClassificationMappings) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.mapArr = mapObj.classificationMapping;</span>
+    });
+  }
+&nbsp;
+  /**
+ * @method setClassificationTypes
+ * @description Function to set the classification types. These are used to set the display name of the data types
+ */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  setClassificationTypes(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.searchResultsService.getClassificationTypes().subscribe(<span class="fstat-no" title="function not covered" >(</span>typeObj: any) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.typeArr = typeObj.classificationTypes as ClassificationType[];</span>
+    });
+  }
+&nbsp;
+  /**
+ * @method createFilters
+ * @description Method used to aggregate the data sources/types transforms
+ * @param filterParams: Object returned by the search service. Contains the data_sources and entity_types arrays
+ */
+  createFilters(filterParams: FilterParameters): FilterConfig {
+    const filters: FilterConfig = {data_sources: [], data_types: []};
+    /*const filterParam = {sys_category: ['0/EDM/', 1],
+     sys_entitytype: ['Company', 1]};*/
+    filters.data_sources = this.dataSourceTransform('Data Sources', filterParams.sys_category);
+    filters.data_types = this.dataTypeTransform('Data Types', filterParams.sys_entitytype);
+<span class="cstat-no" title="statement not covered" >    return filters;</span>
+  }
+&nbsp;
+  /**
+ * @method dataSourceTransform
+ * @description Method used to create the data sources transform
+ * @param headerLabel: header text to be used for the root node
+ * @param filterDataArr: sys_category array to be transformed into a TreeNode array
+ */
+  private dataSourceTransform(headerLabel: string, filterDataArr: (string|number)[]): TreeNode[] {
+    let resultArr: TreeConfig[] = [];
+    for (let i = 0, len = filterDataArr.length; i &lt; len; i += 2) {
+      const dataStr: string = filterDataArr[i] as string;
+      const data: TreeConfig = {
+        'index': parseInt(dataStr.charAt(0), 10),
+        'node': dataStr.substr(2, dataStr.length - 3), // 3 =&gt; first 2 chars + last 1 char
+        'value': ' (' + filterDataArr[i + 1] + ')'
+      };
+      resultArr.push(data);
+    }
+    resultArr = this.arraySortByProperty(resultArr, 'node');
+    console.log(resultArr);
+    const refinementArr: TreeNode[] = [];
+    const parentNode: TreeNode = this.createTreeNodeObject();
+    parentNode.children = this.createTreeNodes(resultArr);
+    parentNode.data = parentNode.label = headerLabel;
+    refinementArr.push(parentNode);
+    return refinementArr;
+  }
+&nbsp;
+  /**
+ * @method arraySortByProperty
+ * @description utility used to sort an array of objects based on a property
+ * @param arr: array to be sorted
+ * @param prop: property against which the array is to be sorted
+ */
+  private arraySortByProperty&lt;T&gt;(arr: T[], prop: string): T[] {
+    arr.sort(<span class="fstat-no" title="function not covered" >(</span>a, b) =&gt; {
+      const prop1 =  <span class="cstat-no" title="statement not covered" >a[prop].toLowerCase(),</span> prop2 = <span class="cstat-no" title="statement not covered" >b[prop].toLowerCase();</span>
+      // tslint:disable-next-line:curly
+<span class="cstat-no" title="statement not covered" >      if (prop1 &lt; prop2) // sort string ascending</span>
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+      // tslint:disable-next-line:curly
+<span class="cstat-no" title="statement not covered" >      if (prop1 &gt; prop2)</span>
+<span class="cstat-no" title="statement not covered" >        return 1;</span>
+<span class="cstat-no" title="statement not covered" >      return 0; </span>// default return value (no sorting)
+    });
+    return arr;
+  }
+&nbsp;
+  /**
+ * @method createTreeNodes
+ * @description method to create the Data Sources Tree
+ * @param arr: intermediary array of objects created from sys_category
+ */
+  private createTreeNodes(arr: TreeConfig[]): TreeNode[] {
+    const treeArr: TreeNode[] = [];
+    for (let i = 0, len = arr.length; i &lt; len; i++) {
+      const treeNode: TreeNode = this.createTreeNodeObject();
+      const data: TreeConfig = arr[i];
+      const dataSplit = data.node.split('/');
+      treeNode.label = dataSplit[data.index] + data.value;
+      treeNode.data = data.node;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (data.index === 0) {
+        treeArr.push(treeNode);
+      } else {
+        const tempNode: TreeNode = <span class="cstat-no" title="statement not covered" >this.filterTreeNode(treeArr, data.node.substr(0, data.node.lastIndexOf('/')), 'data');</span>
+<span class="cstat-no" title="statement not covered" >        tempNode.children.push(treeNode);</span>
+      }
+    }
+    return treeArr;
+  }
+&nbsp;
+  /**
+ * @method createTreeNodeObject
+ * @description method to create a new TreeNode
+ */
+  private createTreeNodeObject(): TreeNode {
+    const treeNode = {
+      label: '',
+      data: '',
+      children: [],
+      expanded: true
+    };
+    return treeNode;
+  }
+&nbsp;
+   /**
+ * @method filterTreeNode
+ * @description utility to perform a deep filter against multiple nested arrays/objects. Returns an object.
+ * @param obj: source object whose properties/ nested nodes are to be searched
+ * @param data: data to be searched
+ * @param propName: property against which data is to be searched
+ */
+<span class="fstat-no" title="function not covered" >  private filterTreeNode(</span>obj: any, data: string, propName: string): TreeNode {
+    let result: TreeNode = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    if (obj instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; obj.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        result = this.filterTreeNode(obj[i], data, propName);</span>
+<span class="cstat-no" title="statement not covered" >        if (result) {</span>
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        }
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      for (const prop in obj) {</span>
+        // console.log(prop + ': ' + obj[prop]);
+<span class="cstat-no" title="statement not covered" >        if (obj.hasOwnProperty(prop)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (prop === propName) {</span>
+<span class="cstat-no" title="statement not covered" >            if (obj[prop] === data) {</span>
+<span class="cstat-no" title="statement not covered" >              return obj;</span>
+            }
+          }
+<span class="cstat-no" title="statement not covered" >          if (obj[prop] instanceof Object || obj[prop] instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered" >            result = this.filterTreeNode(obj[prop], data, propName);</span>
+<span class="cstat-no" title="statement not covered" >            if (result) {</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
+            }
+          }
+        }
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    return result;</span>
+  }
+&nbsp;
+   /**
+ * @method dataTypeTransform
+ * @description method to create the Data Type Tree
+ * @param headerLabel: header text to be used for the root node
+ * @param entityArr: sys_entitytype array to be transformed into a TreeNode array
+ */
+  private dataTypeTransform(headerLabel: string, entityArr: (string|number)[]): TreeNode[] {
+    let mapFound = false;
+    const otherEntityArr: TreeNode[] = [],
+      dataTypeArr: TreeNode[] = [];
+    for (let i = 0, len = entityArr.length; i &lt; len; i += 2) {
+      const treeNode: TreeNode = this.createTreeNodeObject();
+      mapFound = false;
+      for (let j = 0, mapLen = this.mapArr.length; j &lt; mapLen; j++) {
+<span class="cstat-no" title="statement not covered" >        if (entityArr[i].toString() === this.mapArr[j].entity.split('.')[1]) {</span>
+<span class="cstat-no" title="statement not covered" >          mapFound = true;</span>
+<span class="cstat-no" title="statement not covered" >          treeNode.data = entityArr[i];</span>
+<span class="cstat-no" title="statement not covered" >          treeNode.label = entityArr[i] + ' (' + entityArr[i + 1] + ')';</span>
+          const filterData = <span class="cstat-no" title="statement not covered" >this.filterTreeNode(dataTypeArr, this.mapArr[j].mapping, 'data');</span>
+<span class="cstat-no" title="statement not covered" >          if (filterData) {</span>
+<span class="cstat-no" title="statement not covered" >            filterData.children.push(treeNode);</span>
+          } else {
+            // Create the parent node based on the mapping type
+            const parentTreeNode: TreeNode = <span class="cstat-no" title="statement not covered" >this.createTreeNodeObject();</span>
+<span class="cstat-no" title="statement not covered" >            parentTreeNode.data = this.mapArr[j].mapping;</span>
+<span class="cstat-no" title="statement not covered" >            parentTreeNode.label = this.mapArr[j].mapping;</span>
+<span class="cstat-no" title="statement not covered" >            parentTreeNode.children.push(treeNode);</span>
+<span class="cstat-no" title="statement not covered" >            dataTypeArr.push(parentTreeNode);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          break;</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      if (!mapFound) {</span>
+<span class="cstat-no" title="statement not covered" >        treeNode.data = entityArr[i];</span>
+<span class="cstat-no" title="statement not covered" >        treeNode.label = entityArr[i] + ' (' + entityArr[i + 1] + ')';</span>
+<span class="cstat-no" title="statement not covered" >        otherEntityArr.push(treeNode);</span>
+      }
+    }
+    // update mapping text as per classificationType
+<span class="cstat-no" title="statement not covered" >    dataTypeArr.forEach(<span class="fstat-no" title="function not covered" >(</span>node: TreeNode) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.typeArr.filter(<span class="fstat-no" title="function not covered" >(</span>type) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (node.label === type.id) {</span>
+<span class="cstat-no" title="statement not covered" >          node.label = type.displayName;</span>
+        }
+      });
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (otherEntityArr.length &gt; 0) {</span>
+      // Create the parent node for entities with missing mapping
+      const parentTreeNode: TreeNode = <span class="cstat-no" title="statement not covered" >this.createTreeNodeObject();</span>
+<span class="cstat-no" title="statement not covered" >      parentTreeNode.data = 'Others';</span>
+<span class="cstat-no" title="statement not covered" >      parentTreeNode.label = 'Others';</span>
+<span class="cstat-no" title="statement not covered" >      parentTreeNode.children = otherEntityArr;</span>
+<span class="cstat-no" title="statement not covered" >      dataTypeArr.push(parentTreeNode);</span>
+    }
+    const dataTypeParentArr: TreeNode[] = <span class="cstat-no" title="statement not covered" >[];</span>
+    const dataTypeParent: TreeNode = <span class="cstat-no" title="statement not covered" >this.createTreeNodeObject();</span>
+<span class="cstat-no" title="statement not covered" >    dataTypeParent.data = headerLabel;</span>
+<span class="cstat-no" title="statement not covered" >    dataTypeParent.label = headerLabel;</span>
+<span class="cstat-no" title="statement not covered" >    dataTypeParent.children = dataTypeArr;</span>
+<span class="cstat-no" title="statement not covered" >    dataTypeParentArr.push(dataTypeParent);</span>
+<span class="cstat-no" title="statement not covered" >    return dataTypeParentArr;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Nov 09 2017 16:58:56 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

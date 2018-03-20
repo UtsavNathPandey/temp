@@ -1,0 +1,28 @@
+<div class="top-container margin-bottom">
+  <span class="title-container">Selected Refinement</span>
+  <span class="clear-container">
+    <span class="pull-right" (click)="removeAllAppliedRefinement()">
+      Clear All
+      <i class="fa fa-times-circle-o clear-all" aria-hidden="true"></i>
+    </span>
+  </span>
+</div>
+<div class="ui-g-12 ui-md-12">
+  <div class="top-container ui-g-6">
+    <span *ngFor="let file of appliedRefinementArr; let i=index;">
+      <wfw-filter-chips [fileData]="file" (onFilterRemoval)="removeAppliedRefinement(i)"></wfw-filter-chips>
+    </span>
+    <div class="margin-top">Available</div>
+  </div>
+  <div class="ui-g-6">
+    <div class="save-as-form-container-cls" #saveRefinementsFormPanelContainer>
+      <!-- <span (click)="saveRefinementsFormPanel.toggle($event)" class="fa fa-floppy-o save-icon-cls" aria-hidden="true"></span> -->
+      <span (click)="saveRefinementsFormPanel.toggle($event)" class="icon-save-default save-icon-cls"></span>
+      <p-overlayPanel #saveRefinementsFormPanel [appendTo]="saveRefinementsFormPanelContainer">
+        <wfw-save-refinements-form-component [appliedRefinements]="appliedRefinementArr"
+        [saveRefinementsFormPanelOverlay]="saveRefinementsFormPanel">
+        </wfw-save-refinements-form-component>
+      </p-overlayPanel>
+    </div>
+  </div>
+</div>

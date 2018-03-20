@@ -1,0 +1,11 @@
+
+<p-tree class="accordian-tree-root" [value]="dataSources" selectionMode="checkbox" [(selection)]="selectedFile" (onNodeSelect)="updateSelection(selectedFile)"
+(onNodeUnselect)="updateSelection(selectedFile)"></p-tree>
+
+
+<p-tree class="accordian-tree" [value]="dataTypes" selectionMode="checkbox" [(selection)]="selectedFile" (onNodeSelect)="updateSelection(selectedFile)"
+(onNodeUnselect)="updateSelection(selectedFile)"></p-tree>
+
+<p-tree class="accordian-tree" [value]="dataAttributes" selectionMode="checkbox" [(selection)]="selectedFile" (onNodeSelect)="updateSelection(selectedFile)"
+(onNodeUnselect)="updateSelection(selectedFile)"></p-tree>
+
