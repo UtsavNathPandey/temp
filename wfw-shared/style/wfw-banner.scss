@@ -1,0 +1,29 @@
+/* banner theme starts */
+
+.ui-messages-icon {
+    display: none;
+}
+
+// create the banner styles for all message types
+@include wfw-create-messages(success, $halliburton-light-green, $halliburton-dark-green, $halliburton-mid-green);
+@include wfw-create-messages(info, $halliburton-light-blue, $halliburton-dark-blue, $halliburton-mid-blue);
+@include wfw-create-messages(warn, $halliburton-light-brown, $halliburton-dark-brown, $halliburton-mid-brown);
+@include wfw-create-messages(error, $halliburton-light-pink, $halliburton-dark-pink, $halliburton-mid-pink);
+
+.ui-messages {
+    padding: 1em 2.5em 1em 0.9em;
+    .ui-messages-close {
+        right: 18px; 
+        font-size: 0;   // to remove the extra spacings
+        @include wfw-center-vertically();
+        .fa-close::before {        
+            font-size: 16px;
+            opacity: 0.5;
+            content: "\e96e";
+            color: #fff;
+            font-family: $wfw-icons-font-family;
+        }
+    }
+}
+
+/* banner theme ends */

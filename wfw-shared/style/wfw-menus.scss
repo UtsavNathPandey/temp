@@ -1,0 +1,87 @@
+/* menu theme starts */
+
+//menu specific variables for theming
+$menu-item-highlighted: #ebebeb;    //color given by Halliburton Designer and this is not in style guide ( name missing )
+$menu-header: #e4e4e4;  // color from style guide
+$menu-font: $halliburton-blackish-grey;
+$menu-mega-bg: #f5f5f5; // color from style guide
+$menu-container-border: $border-color;
+$menu-box-shadow-color: $border-color;
+$menu-mega-default-color: $halliburton-mid-grey;
+
+.ui-menu {
+    border-color: $border-color;
+    background: $halliburton-white;    
+    @include wfw-box-shadow(2px 3px 14px $border-color);
+    padding: .48em 0;
+    .ui-menu-child {
+        @extend .ui-menu;
+    }
+    .ui-menuitem-text {
+        margin-left: .35em;
+    }
+    .ui-menuitem {
+        margin: 0;
+        &.ui-menuitem-active>.ui-menuitem-link, .ui-menuitem-link:hover{
+            background-color: $menu-item-highlighted;
+            color: $menu-font;
+        }
+        .ui-menuitem-link {
+            line-height: .8em;
+            padding: .4em .85em;
+            @include wfw-border-radius(0);
+            color: $menu-font;
+            .ui-menuitem-icon {
+                margin-left: .2em;
+                line-height: .8em;
+            }
+        }
+    }
+    &.ui-megamenu {
+        background: $menu-mega-bg;
+        .ui-menu-parent>.ui-menuitem-link {
+            color: $menu-mega-default-color;
+        }
+        .ui-menu-parent .ui-menu-child {
+            padding: 0;
+        }
+        .ui-menuitem-active>.ui-menuitem-link {
+            color: $menu-font;
+            background: none;
+        }
+    }
+    .ui-menu-parent .ui-menu-child {
+        padding: .48em 0;
+        &.ui-megamenu-panel .ui-g>div {
+            padding-top: .45em;
+            padding-bottom: .45em;
+            .ui-menu-list {
+                padding-bottom: .65em;
+                &:last-of-type {
+                    padding-bottom: 0;
+                }
+                .ui-widget-header {
+                    padding: .15em 1.2em;
+                    border: none;
+                    background: $menu-header;
+                    margin: 0;
+                    @include wfw-border-radius(0);
+                    h3 {
+                        font-size: 14px;
+                    }
+                }
+                .ui-menuitem .ui-menuitem-link {
+                    color: $menu-font;
+                    padding: .3em .85em;
+                    @include wfw-border-radius(0);
+                    line-height: .8em;
+                    &:hover {
+                        background: $menu-item-highlighted;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* menu theme ends */

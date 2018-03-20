@@ -1,0 +1,135 @@
+<div class="ui-g-12">
+    <h3>DataTable</h3>
+
+    
+    <h4>DataTable - Basic</h4>  
+    <p-dataTable [value]="cars" dataKey="vin"  styleClass="ui-plain-rows">        
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" ></p-column>
+    </p-dataTable>
+
+    <h4>DataTable - Aternate Rows</h4>  
+    <p-dataTable [value]="cars" dataKey="vin" >        
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" ></p-column>
+    </p-dataTable>
+    
+    <h4>DataTable with Paginator/Sort/Row-Expansion/Editable-Cell</h4>
+    <p-dataTable [value]="cars"  [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" expandableRows="true" [editable]="true" >
+        <p-column expander="true" styleClass="col-icon"></p-column>
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" sortable="true" [editable]="true"></p-column>
+        <ng-template let-car pTemplate="rowexpansion">
+            Row is expanded <br><br><br>
+        </ng-template>
+    </p-dataTable>
+
+    <h4>DataTable - ContextMenu</h4>
+    <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" [contextMenu]="cm">    
+        <p-column field="vin" header="Vin"></p-column>
+        <p-column field="year" header="Year"></p-column>
+        <p-column field="brand" header="Brand"></p-column>
+        <p-column field="color" header="Color"></p-column>
+    </p-dataTable>
+    <p-contextMenu #cm [model]="items"></p-contextMenu>
+
+    <h4>DataTable - Resize</h4>  
+    <p-dataTable [value]="cars" dataKey="vin"  resizableColumns="true">
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" ></p-column>
+    </p-dataTable>
+
+    <h4>DataTable - Column Toggler</h4>  
+    <p-dataTable [value]="cars" dataKey="vin"  styleClass="ui-column-toggler">
+        <p-header><div><p-multiSelect [options]="columnOptions" [(ngModel)]="cols"></p-multiSelect></div></p-header>
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" ></p-column>
+    </p-dataTable>
+    
+    <h4>DataTable - Filter</h4>
+    <div class="ui-widget-header ui-global-filter" >
+        <i class="fa fa-search"></i>
+        <input #gb type="text" pInputText size="50" placeholder="Global Filter">
+    </div>
+    <p-dataTable [value]="cars" [globalFilter]="gb" #dt resizableColumns="true">
+        <p-header>List of Cars</p-header>
+        <p-column field="vin" header="Vin (startsWith)" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="year" header="Year ({{yearFilter||'No Filter'}})" [filter]="true" filterMatchMode="equals">
+            <ng-template pTemplate="filter" let-col>
+                <i class="fa fa-close" (click)="yearFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>
+                <p-slider [(ngModel)]="yearFilter" [min]="1970" [max]="2010" (onSlideEnd)="dt.filter($event.value,col.field,col.filterMatchMode)"></p-slider>
+            </ng-template>
+        </p-column>
+        <p-column field="brand" header="Brand (Custom)" [filter]="true" filterMatchMode="equals">
+            <ng-template pTemplate="filter" let-col>
+                <p-dropdown [options]="brands" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+            </ng-template>
+        </p-column>
+        <p-column field="color" header="Color (Custom)" [filter]="true" filterMatchMode="in">
+            <ng-template pTemplate="filter" let-col>
+                <p-multiSelect [options]="colors" defaultLabel="All Colors" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-multiSelect>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+
+    <h4>DataTable - Templating</h4>
+    <p-dataTable [value]="cars">
+        <p-column field="vin" header="Vin"></p-column>
+        <p-column field="year" header="Year"></p-column>
+        <p-column field="brand" header="Brand"></p-column>
+        <p-column field="color" header="Color">
+            <ng-template let-col let-car="rowData" pTemplate="body">
+                <span [style.color]="car[col.field]">{{car[col.field]}}</span>
+            </ng-template>
+        </p-column>
+        <p-column styleClass="col-button">
+            <ng-template pTemplate="header">
+                <button type="button" pButton icon="fa-refresh"></button>
+            </ng-template>
+            <ng-template let-car="rowData" pTemplate="body">
+                <button type="button" pButton (click)="selectCar(car)" icon="fa-search"></button>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+
+    <h4>DataTable - Column Grouping</h4>
+    <p-dataTable [value]="cars"  [rows]="5">
+        <p-headerColumnGroup>
+            <p-row>
+                <p-column header="Column Label" rowspan="3"></p-column>
+                <p-column header="Group Label" colspan="3"></p-column>
+            </p-row>
+            <p-row>
+                <p-column header="Category 1 Label" colspan="2" styleClass="border-right-0"></p-column>
+                <p-column header="Category 2 Label" colspan="1" styleClass="border-left-0"></p-column>
+            </p-row>
+            <p-row>
+                <p-column header="Category Label - #" styleClass="border-top-2"></p-column>
+                <p-column header="Category Label" styleClass="border-top-2"></p-column>
+                <p-column header="Category Label" styleClass="border-top-2"></p-column>
+            </p-row>
+        </p-headerColumnGroup>
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" sortable="true"></p-column>
+        <p-footerColumnGroup>
+                <p-row>
+                    <p-column footer="" colspan="1" styleClass="border-right-0"></p-column>
+                    <p-column footer="Label" colspan="2" styleClass="border-left-0"></p-column>
+                    <p-column footer="Label"></p-column>
+                </p-row>
+        </p-footerColumnGroup>
+    </p-dataTable>
+
+    <h4>DataTable - Multiple Selection</h4>  
+    <p-dataTable [value]="cars" selectionMode="multiple" [(selection)]="selectedCars" dataKey="vin" >
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" ></p-column>
+    </p-dataTable>
+    
+    <h4>DataTable - Row Grouping</h4>  
+    <p-dataTable [value]="cars2" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true" [sortableRowGroup]="false"  
+        styleClass="ui-plain-rows">
+        <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['brand']}}</ng-template>
+        <p-column field="color" header="Color"></p-column>
+        <p-column field="year" header="Year"></p-column>
+        <p-column field="vin" header="Vin"></p-column>
+        <p-column field="price" header="Price">
+            <ng-template let-col let-car="rowData" pTemplate="body">
+                <span>{{car[col.field] | currency:'USD':true:'.0-0'}}</span>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+</div>

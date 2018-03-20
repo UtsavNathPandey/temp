@@ -1,0 +1,83 @@
+<h4>Form Components:</h4>
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12 ui-md-5">
+    <h5>Input Text:</h5>
+    <input type="text" pInputText> 
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Textarea:</h5>      
+    <textarea pInputTextarea class="ui-md-6"></textarea>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Dropdown:</h5>      
+    <p-dropdown [options]="cities" [autoWidth] = "false" placeholder="Select a City"></p-dropdown>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Autocomplete:</h5>      
+    <p-autoComplete  [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Mask:</h5>      
+    <p-inputMask mask="99/99/9999" slotChar="mm/dd/yyyy"></p-inputMask>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Password:</h5>
+    <input type="password" pPassword >       
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>Calender:</h5>
+    <p-calendar>
+        <ng-template pTemplate="date" let-date>
+            <span [ngClass]="{'hightlighted-date' : (date.day < 21 && date.day > 10)}" >{{date.day}}</span>
+        </ng-template>
+    </p-calendar>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <div class="ui-g-12 ui-md-5">
+      <h5>Checkbox:</h5>
+      <div class="ui-md-12">
+        <p-checkbox name="groupname" value="val1" label="Value 1" ></p-checkbox>
+      </div>
+      <div class="ui-md-12">
+        <p-checkbox name="groupname" value="val2" label="Value 2" ></p-checkbox>
+      </div>
+    </div>
+    <div class="ui-g-12 ui-md-5">
+      <h5>RadioButton:</h5>
+      <div class="ui-md-12">
+        <p-radioButton name="groupname" value="val1" label="Option 1" ></p-radioButton>
+      </div>
+      <div class="ui-md-12">
+        <p-radioButton name="groupname" value="val2" label="Option 1" ></p-radioButton>
+      </div>
+    </div>  
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>Slider:</h5>
+      <p-slider ></p-slider>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+    <h5>SplitButton:</h5>
+    <p-splitButton label="Save" icon="fa-check" [model]="items"></p-splitButton>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>ToggleButton:</h5>
+    <p-toggleButton></p-toggleButton>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>SelectButton:</h5>
+      <p-selectButton [options]="cities1" ></p-selectButton>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>Multiselect:</h5>
+      <p-multiSelect [options]="cities1"></p-multiSelect>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>Spinner:</h5>
+      <p-spinner size="30" ></p-spinner>
+  </div>
+  <div class="ui-g-12 ui-md-5">
+      <h5>Listbox:</h5>        
+      <p-listbox [options]="cities1" ></p-listbox>
+  </div>
+</div>

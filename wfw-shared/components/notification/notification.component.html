@@ -1,0 +1,20 @@
+<!-- using ng-container to support multiple messages with different severity messages-->
+<ng-container *ngFor='let message of Messages | async'>
+    <div class="ui-messages ui-widget ui-corner-all" style="display:block"
+        [ngClass]="{'ui-messages-info':(message.severity === 'info'),
+        'ui-messages-warn':(message.severity === 'warn'),
+        'ui-messages-error':(message.severity === 'error'),
+        'ui-messages-success':(message.severity === 'success')}">
+        <a class="ui-messages-close" (click)="clear($event, message.id)" *ngIf="message.closable">
+            <i class="fa fa-close"></i>
+        </a>
+        <span class="ui-messages-icon fa fa-fw fa-2x" [ngClass]="icon"></span>
+        <ul>
+            <li>
+                <span class="ui-messages-summary" [innerHTML]="message.summary"></span>
+                <span class="ui-messages-detail" [innerHTML]="message.detail"></span>
+                <a *ngIf="message.eventTitle" class="ui-messages-detail ui-messages-event" (click)="message.event(message)" [innerHTML]="message.eventTitle"></a>                
+            </li>
+        </ul>
+    </div>
+</ng-container>

@@ -1,0 +1,123 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "wfw-shared@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+        "scope": null,
+        "escapedName": "wfw-shared",
+        "name": "wfw-shared",
+        "rawSpec": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+        "spec": "ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+        "type": "git"
+      },
+      "D:\\Project Repo New\\wfw-search-filters"
+    ]
+  ],
+  "_from": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+  "_id": "wfw-shared@5000.12.2-37",
+  "_inCache": true,
+  "_location": "/wfw-shared",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "wfw-shared@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+    "scope": null,
+    "escapedName": "wfw-shared",
+    "name": "wfw-shared",
+    "rawSpec": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+    "spec": "ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+    "type": "git"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#64ffeb840660230a9f7b9b609a6685931893fb53",
+  "_shasum": "dcf83889f41121b92ea78d357799e2bc2a0b3f9e",
+  "_shrinkwrap": null,
+  "_spec": "wfw-shared@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git#develop",
+  "_where": "D:\\Project Repo New\\wfw-search-filters",
+  "author": {
+    "name": "Zach Russell",
+    "email": "zachary.russell@accenture.com",
+    "url": "#zachary.russell"
+  },
+  "bugs": {
+    "url": "https://git.openearth.community/BoreHoleDataMgmt/wfw-shared/issues"
+  },
+  "contributors": [
+    {
+      "name": "Zach Russell",
+      "email": "zachary.russell@accenture.com",
+      "url": "#zachary.russell"
+    }
+  ],
+  "dependencies": {},
+  "description": "Common injectables for shared and core module usage",
+  "devDependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/cli": "^1.4.4",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.4.4",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/language-service": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.0.1",
+    "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "primeng": "^4.2.2",
+    "protractor": "~5.1.2",
+    "rxjs": "^5.4.1",
+    "ts-node": "~3.0.4",
+    "tslint": "~5.3.2",
+    "typescript": "~2.3.3",
+    "zone.js": "^0.8.14"
+  },
+  "gitHead": "64ffeb840660230a9f7b9b609a6685931893fb53",
+  "homepage": "https://git.openearth.community/BoreHoleDataMgmt/wfw-shared/",
+  "license": "UNLICENSED",
+  "main": "index.ts",
+  "name": "wfw-shared",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifacts.repo.openearth.community/artifactory/api/npm/boreholedatamgmt-npm/"
+  },
+  "readme": "## WFW Notifications\r\n\r\nImport the shared module and the service into your project:\r\n\r\n```\r\nimport { WfwSharedModule } from 'wfw-shared/wfw-shared.module';\r\nimport { WfwNotificationService } from 'wfw-shared/services/notification.service';\r\n```\r\n\r\nadd the `<wfw-notification></wfw-notification>` selector to the view where you want your messages to display.\r\n\r\nUsing the `WfwNotificationService` you can add messages/notification like so:\r\n\r\n```\r\nthis.notificationService.message({\r\n      severity: 'warn',\r\n      summary: `This is a warning`,\r\n      detail: 'warning details',\r\n      closable: true,\r\n      eventTitle: `Click to trigger`,\r\n      event: (message) => {\r\n        console.log('event triggered');\r\n      }\r\n    });\r\n```\r\n\r\nSee `wfw-shared/models/notification-type.interface.ts` for all of the attribute available to a Notification.\r\n\r\n## Halliburton PrimeNg Theme\r\n\r\nImport the shared module by npm install. This should get the latest files for Halliburton theme from wfw-shared module.\r\nThemes SCSS files can be found under style folder.\r\n\r\nThe wfw-main is the main theme file which resides in shared module and has to be included in your projects `styles.scss` file along with `wfw-variables` and `wfw-mixins` as seen below:\r\n\r\n```\r\n@import \"~wfw-shared/icons/wfw-icons.scss\";\r\n@import \"~wfw-shared/style/wfw-main\";\r\n@import \"~wfw-shared/style/wfw-mixins\";\r\n```\r\n\r\nWherever the primeng components are referred respective theme is applied automatically.\r\n\r\nIf variable from `wfw-variables` are used in your project in any of the components then the `wfw-variables` file should be referenced in your component file. Same thing applied to mixins.\r\n\r\nTheming by default will support alternate row colouring, To display all rows in same colour add `ui-plain-rows` class to datatable.\r\n\r\nIn Column Toggler add `ui-column-toggler` class to datatable to achieve theme as style guide.\r\n\r\nIn Column Grouping use these classes `border-right-0`, `border-left-0` and `border-top-2` for removing borders and adding borders to achieve theme as style guide.",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-shared.git"
+  },
+  "scripts": {
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "precommit": "ng lint",
+    "serve": "ng serve --proxy-config proxy.conf.json",
+    "start": "npm run serve",
+    "test": "ng test"
+  },
+  "version": "5000.12.2-37"
+}

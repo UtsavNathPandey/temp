@@ -1,0 +1,567 @@
+/* form fields theme starts */
+
+// form specific variables for theming
+$border-color: #d9d9d9; // color picked from the primeng ( name missing )
+$focus-color: #1f89ce;  // color picked from the primeng ( name missing )
+$default-grey-bg: #e5e5e5; // color given by Halliburton Designer and this is not in style guide ( name missing )
+$active-color: #5179b4;  // color given by Halliburton Designer and this is not in style guide ( name missing )
+$active-hover-color: #546c9c; // color given by Halliburton Designer and this is not in style guide ( name missing )
+$active-font-color: $halliburton-white; // color when background is active
+$default-icons-color: $halliburton-mid-grey; // assumed  $halliburton-mid-grey as the icon color
+$form-font-color: $halliburton-blackish-grey; // assumed $halliburton-blackish-grey as the font color
+
+
+/* global primeng form styles starts */
+.ui-widget-content {
+    background: $halliburton-white;
+}
+.ui-state-highlight{
+    background: $active-color;
+    color: $active-font-color;
+}
+
+.ui-state-default, .ui-widget-content {
+    border-color: $border-color;
+}
+.ui-widget-header {
+    border-color: $border-color;
+    background: $default-grey-bg;
+    color: $halliburton-blackish-grey;
+}
+/* global primeng form styles ends */
+
+/* input fields styles starts */
+.ui-inputtext {
+    padding: 0.429em 0.55em;    
+    border-color: $border-color;
+    color: $form-font-color;   
+    &:enabled:hover {
+        border-color: $border-color;
+    }  
+    &.ui-state-focus, &:focus, &:focus:hover {
+        @include wfw-box-shadow(0 0 5px $focus-color);
+        border-color: $focus-color;
+    }    
+}
+/* input fields styles ends */
+
+/* dropdown styles starts */    
+.ui-dropdown {    
+    &:not(.ui-state-disabled):hover {
+        border-color: $border-color;  
+    }
+    &.ui-state-focus, &.ui-state-focus:hover {        
+        @include wfw-box-shadow(0 0 5px $focus-color);
+        border-color: $focus-color;
+    }
+    .ui-inputtext {
+        padding-left: 1.1em;
+        padding-right: 1.1em;
+    }
+    .ui-dropdown-label {
+        line-height: 1.2;
+        text-align: left; 
+    }
+    .ui-dropdown-trigger {
+        border-left: 0;
+        background: none;
+        .fa {
+            margin-top: .5em;
+            margin-left: -.6em;
+            &::before{
+                color: $active-color;        
+            }
+        }
+    }
+}
+.ui-dropdown-panel {
+    .ui-dropdown-list {
+        padding: 0; 
+    }
+    &.ui-widget-content {
+        padding: 0.1em 0;
+    }
+    .ui-dropdown-item {
+        padding: 0.3em 1.1em;
+        &.ui-corner-all{
+            @include wfw-border-radius(0);
+            margin: 0;
+        }
+        &:not(.ui-state-highlight):hover {
+            background: $default-grey-bg;
+            color: $form-font-color;
+        }
+    }
+}
+/* dropdown styles ends */
+
+/* autocomplete styles starts */
+.ui-autocomplete {  
+    .ui-autocomplete-input {
+        padding: 0.429em 1.1em;
+    }
+    .ui-autocomplete-items {
+        padding: 0;
+    }
+    .ui-autocomplete-list-item {
+        padding: 0.3em 1.1em;
+        &.ui-corner-all{
+            @include wfw-border-radius(0);
+            margin: 0;
+        }
+    }
+}
+/* autocomplete styles ends */
+
+/* calender styles starts */
+.ui-calendar { 
+    .ui-datepicker {
+        border: 1px solid $border-color;
+        padding: 0;
+        width: 18.5em;
+        .ui-datepicker-header {
+            padding: .8em 0 0.3em;
+            font-weight: bold;
+            background: $default-grey-bg;
+        }
+        .ui-datepicker-prev .fa-angle-left::before{
+            content: "\f053";                
+        }
+        .ui-datepicker-next .fa-angle-right::before{
+            content: "\f054";                
+        }
+        .ui-datepicker-prev, .ui-datepicker-next {
+            top: .8em;
+            &:hover {
+                background: $default-grey-bg;
+            }            
+        } 
+               
+        .ui-datepicker-calendar {
+            font-size: 14px;    
+            thead th{
+                background-color: $halliburton-white;
+                border-bottom: 1px solid $border-color;
+            }        
+            td {
+                border-color: $border-color;
+                &:not(.ui-state-disabled) a:hover {
+                    border-color: $default-grey-bg;
+                    background: $default-grey-bg;
+                    color: $form-font-color;
+                }
+                &.ui-state-disabled {
+                    opacity: 0.5;
+                    a span {
+                        color: $halliburton-darkest-grey;
+                    }
+                }
+                a {
+                    padding: 6px;
+                    &.ui-state-active, &.ui-state-highlight{
+                        background-color: $active-color;
+                        color: $active-font-color;
+                    }
+                }
+                span {
+                    text-align: center;
+                    padding: 0.2em 0.3em;                    
+                    @include wfw-border-radius(50%);
+                    &.hightlighted-date{
+                        background: $halliburton-light-green;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+/* calender styles ends */
+
+/* checkbox styles starts */
+.ui-chkbox {
+    margin-right: .35em;
+    .ui-chkbox-box {
+        width: 1.429em;
+        height: 1.429em;
+        padding-top: 0.1em;
+        @include wfw-border-radius(0);
+        &.ui-state-focus {
+            @include wfw-box-shadow(0 0 5px $focus-color);
+            border-color: $focus-color;
+            background: $halliburton-white;   
+        }
+        &.ui-state-active {
+            border-color: $active-color;
+            background: $active-color;
+            &.ui-state-focus {
+                border-color: $focus-color;
+            }
+        }        
+        &:not(.ui-state-disabled):not(.ui-state-active):hover {
+            border-color: $border-color;
+            background: $default-grey-bg;
+        }
+    }
+    .ui-chkbox-icon.fa-check::before {
+        content: "\e972";
+        font-family: $wfw-icons-font-family;
+        font-size: 10px;
+    }
+}
+.ui-chkbox-label {
+    cursor: pointer;
+}
+/* checkbox styles ends */
+
+/* radiobutton styles starts */
+.ui-radiobutton {
+    margin-right: .35em;
+    .ui-radiobutton-box {
+        width: 20px;
+        height: 20px;
+        @include wfw-border-radius(50%);
+        background-color: $halliburton-white;
+        &.ui-state-active {
+            border-color: $active-color;
+            &.ui-state-focus {
+                border-color: $focus-color;
+            }
+            .ui-radiobutton-icon {
+                background-color: $active-color; 
+            }
+        }
+        &.ui-state-focus {
+            @include wfw-box-shadow(0 0 5px $focus-color);
+            border-color: $focus-color;
+            background: $halliburton-white;    
+        }
+        .ui-radiobutton-icon {
+            @include wfw-border-radius(50%);
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            font-size: 13px;
+            margin-top: 3px;
+            &.fa-circle::before {
+                content: '';
+            }
+        }
+        &:not(.ui-state-disabled):not(.ui-state-active):hover {
+            border-color: $border-color;
+            background: $default-grey-bg;
+        }
+    }    
+}
+.ui-radiobutton-label {
+    cursor: pointer;
+}
+/* radiobutton styles ends */
+
+/* ui-slider styles starts */
+.ui-slider {
+    background-color: $default-grey-bg;
+    border-color: $default-grey-bg;    
+    @include wfw-box-shadow(none);
+    .ui-corner-all {
+        @include wfw-border-radius(4px);
+    }
+    .ui-slider-handle {        
+        @include wfw-border-radius(50%);
+        background-image: none;
+        background-color: $active-color;
+        width: 1.3em !important;
+        height: 1.3em !important;
+        top: -0.2em !important;
+    }
+}
+/* ui-slider styles starts */
+
+/* select button and toggle button styles starts */
+.ui-splitbutton.ui-buttonset .ui-button {
+    &:first-child {
+        width: calc(100% - 2.4em);    
+    }
+    &.ui-splitbutton-menubutton {
+        width: 2.4em;
+    }
+}
+.ui-button.ui-button-text-icon-left {
+    .ui-button-icon-left {
+        left: 0.7em;
+    }
+    .ui-button-icon-only .fa {
+        margin-left: -.7em;
+    }
+    .ui-button-text {
+        padding: 0.429em 0.857em 0.429em 2em;
+    }
+}
+.ui-button.ui-button-text-only .ui-button-text, .ui-button-icon-only .ui-button-text {
+    padding: 0.429em 0.857em;
+}
+.ui-togglebutton, .ui-togglebutton.ui-button.ui-state-default, .ui-selectbutton .ui-button.ui-state-default {
+    background-color: $halliburton-white;
+    color: $form-font-color;
+    border: 1px solid $border-color;
+}
+.ui-togglebutton.ui-state-active {
+    background-color: $active-color;
+    color: $active-font-color;
+    border-color: $active-hover-color;
+}
+.ui-togglebutton.ui-button.ui-state-active.ui-state-focus {
+    background-color: $active-hover-color;
+}
+.ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active):hover,
+.ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus, 
+.ui-selectbutton .ui-button:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus {
+    border-color: $border-color;
+    background: $default-grey-bg;
+    color: $form-font-color;    
+}
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+    border: 1px solid $active-color;
+    background: $active-color;
+    color: $active-font-color;
+}
+.ui-widget-header .ui-button:enabled:hover, .ui-widget-header .ui-button:focus, .ui-widget-content .ui-button:enabled:hover, .ui-widget-content .ui-button:focus, .ui-widget.ui-button:enabled:hover, .ui-widget.ui-button:focus, .ui-button:enabled:hover, .ui-button:focus {
+    border: 1px solid $active-hover-color;
+    background: $active-hover-color;
+    color: $active-font-color;
+}
+.ui-button:enabled:hover {
+    background-color: $active-hover-color;
+}
+.ui-togglebutton.ui-button.ui-state-active, .ui-selectbutton .ui-button.ui-state-active {
+    border: 1px solid $active-color;
+    background: $active-color;
+    color: $active-font-color;
+}
+.ui-togglebutton.ui-button.ui-state-active:hover, .ui-selectbutton .ui-button.ui-state-active:hover {
+    border: 1px solid $active-hover-color;
+    background: $active-hover-color;
+}
+.ui-selectbutton .ui-button.ui-state-default {
+    border-right-width: 0;
+    &:last-child {
+        @include wfw-border-radius-for-corners ("", 4px, "", 4px);
+        border-right-width: 1px;
+    }
+    &:first-child {
+        @include wfw-border-radius-for-corners (4px, "", 4px, "");        
+    }
+}
+.ui-selectbutton .ui-button:not(.ui-state-disabled):not(.ui-state-active):hover, .ui-selectbutton .ui-button:not(.ui-state-disabled):not(.ui-state-active).ui-state-focus { 
+    background: $default-grey-bg;
+    color: $form-font-color;
+    border-width: 1px 0 1px 1px;
+    border-color: $border-color;
+    &:last-child {
+        border-right-width: 1px;
+    }
+}
+.ui-togglebutton.ui-button.ui-state-focus, .ui-selectbutton .ui-button.ui-state-focus.ui-state-active {
+    @include wfw-box-shadow(none);
+}
+.ui-selectbutton .ui-button:not(.ui-state-disabled).ui-state-active.ui-state-focus {
+    background-color: $active-hover-color; 
+    &:last-child {
+        border-right-width: 1px;
+    }
+}
+/* select button and toggle button styles ends */     
+
+/* multiselect styles starts */     
+.ui-multiselect {
+    .ui-multiselect-label {
+        display: block;
+        padding: 0.38em 1.1em;
+        text-align: left;
+    }
+    .ui-multiselect-trigger {
+        border-left: 0;
+        background: none;
+        .fa {
+            margin-top: .5em;
+            margin-left: -.6em;
+        }
+    }    
+    &:not(.ui-state-disabled):hover {
+        border-color: $border-color;
+        background: $halliburton-white;
+        color: $form-font-color; 
+    }
+    &.ui-state-focus, &.ui-state-focus:hover {
+        @include wfw-box-shadow(0 0 5px $focus-color);
+        border-color: $focus-color;
+    }
+    .ui-multiselect-panel {
+        padding: 0;
+        min-width: 235px;    
+        .ui-multiselect-header {
+            padding: 0.429em 1.1em;
+            border: none;
+            margin-bottom: 0;
+            background: $default-grey-bg; 
+            @include wfw-border-radius-for-corners("","",0,0);
+            .ui-multiselect-filter-container {
+                float: none;
+                width: 70%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 3px; 
+                .ui-inputtext {
+                    padding: .2em .5em .2em 1.7em;
+                    width: 100%;
+                }
+                .fa {
+                    color: $default-icons-color;
+                    top: .3em;
+                    left: 0.4em;
+                }
+            }
+            .ui-chkbox {
+                margin-right: 4px;
+                float: none;
+                vertical-align: middle;
+                .ui-chkbox-icon {
+                    margin-top: -2px;
+                    &::before {
+                        font-size: 9px;
+                    }                        
+                }
+                .ui-chkbox-box {
+                    width: 1.2em;
+                    height: 1.2em;
+                    &.ui-state-active {
+                        border-color: $halliburton-white; 
+                    }
+                }
+            }
+            .ui-multiselect-close {
+                right: .65em;
+                color: $default-icons-color;
+                font-size: 18px;
+                margin: 0;
+                margin-top: -.1em;
+                padding: 0;
+                &:hover {
+                    padding: 0;
+                    color: $default-icons-color; 
+                }
+                &:focus {
+                    outline: 1px solid $focus-color;
+                    color: $default-icons-color; 
+                }
+            }
+            
+        }
+        .ui-multiselect-items-wrapper {
+            padding: 0; 
+        }
+        .ui-multiselect-items {
+            padding: 0.357em 0; 
+            .ui-multiselect-item {
+                padding: 0.429em 1.1em;
+                @include wfw-border-radius(0);
+                .ui-chkbox {
+                    position: static;
+                    margin-top: -1px;
+                    display: inline-block;
+                    vertical-align: middle; 
+                    .ui-chkbox-icon {
+                        margin-top: -2px;
+                        &::before {
+                            font-size: 9px;
+                        }                        
+                    }
+                    .ui-chkbox-box {
+                        width: 1.2em;
+                        height: 1.2em;
+                        &.ui-state-active {
+                            border-color: $halliburton-white; 
+                        }
+                    }
+    
+                }
+                label {
+                    padding: 0;
+                    margin: 0 0 0 0.4em;
+                    display: inline-block;
+                    vertical-align: middle; 
+                }
+                &:not(.ui-state-highlight):hover {
+                    @include wfw-border-radius(0);
+                    background-color: $default-grey-bg;
+                    color: $form-font-color; 
+                }
+            }
+        }
+    }
+}
+/* multiselect styles ends */     
+
+ /* spinner styles starts */     
+.ui-spinner .ui-spinner-button.ui-button {        
+    background: none;
+    border: none;
+    cursor: pointer;
+    &.ui-spinner-up{
+        top: 1px;
+        right: 6px;
+    }
+    &.ui-spinner-down {
+        bottom: 1px;
+        right: 6px; 
+    }    
+    &:not(.ui-state-disabled) {
+        color: $default-icons-color;
+        &:hover, &:hover, &:hover {
+            color: $default-icons-color;
+            background: none;
+            @include wfw-box-shadow(none);
+            border: none;
+        }        
+    }
+}
+/* spinner styles ends */
+
+/* listbox styles starts */
+.ui-listbox {
+    padding: 0;
+    min-width: 12em;
+    .ui-listbox-list {
+        padding: 0.357em 0;
+    }
+    .ui-listbox-item {
+        margin: 0;
+        padding: 0.179em 1.1em;
+        @include wfw-border-radius(0);
+    }
+    .ui-listbox-header {
+        margin: 0;
+        padding: .3em 1em;
+        background: $default-grey-bg;
+        @include wfw-border-radius(0);
+        .ui-listbox-filter-container .fa {
+            color: $default-icons-color;
+        }
+    }
+    .ui-chkbox .ui-chkbox-box {
+        width: 1.25em;
+        height: 1.25em;
+        margin-top: -1px;
+        &.ui-state-active {
+            border-color: $halliburton-white;
+        }
+    }
+    &:not(.ui-state-disabled) .ui-listbox-item:not(.ui-state-highlight):hover {
+        border-color: $default-grey-bg;
+        background: $default-grey-bg;
+        color: $form-font-color;
+    }
+}
+/* listbox styles ends */
+
+/* form fields theme ends */

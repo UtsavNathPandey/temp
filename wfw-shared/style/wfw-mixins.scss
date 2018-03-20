@@ -1,0 +1,99 @@
+// Mixins starts
+
+// ** name : wfw-create-headings
+//  * description : generate the heading styles along with secondary text within heading
+//  * param1 : heading element type
+//  * param2 : heading element size
+@mixin wfw-create-headings ($type, $size) {
+    #{$type}, .#{$type} {
+        font-size: $size;
+        small, .small {
+            font-size: $size/2;   // secondary text is half the size of the heading     
+        }
+    }    
+}
+
+// ** name : wfw-create-messages
+//  * description : generate the border, color, BG styles for the messages 
+//  * param1 : message type
+//  * param2 : background color
+//  * param3 : font color
+//  * param4 : border color
+@mixin wfw-create-messages ($name, $bgColor, $typeColor, $borderColor) {
+    .ui-messages-#{$name} {        
+        background-color: $bgColor;
+        color: $typeColor;
+        border-color: $borderColor;
+    }   
+}
+
+// ** name : wfw-center-vertically
+//  * description : used to place the element vertcally centered
+//  * param1(optional) : This is an optional parameter. If not passed no position style will be set within this mixin
+@mixin wfw-center-vertically ($position:"") {
+    @if $position != "" {
+        position: $position;
+    }
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);    
+}
+
+// ** name : wfw-box-shadow
+//  * description : applying the shadows with pseudo codes
+//  * val : box shadow value
+@mixin wfw-box-shadow ($val) {
+    -webkit-box-shadow: $val;  // Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ 
+    -moz-box-shadow: $val;  // Firefox 3.5 - 3.6 
+    box-shadow: $val; // Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 
+}
+
+// ** name : wfw-border-radius
+//  * description : border-radius with psuedo codes
+//  * val : border radius value
+@mixin wfw-border-radius ($val) {
+    border-radius: $val;
+	-webkit-border-radius: $val;
+	-moz-border-radius: $val;
+}
+
+// ** name : wfw-border-radius-for-corners
+//  * description : applying the border raduis to specific corners with pseudo codes. "" to be passed when no style required to be passed for specific corner
+//  * topLeft : top left border radius value
+//  * topRight : top right border radius value
+//  * botLeft : bottom left border radius value
+//  * botRight : bottom right border radius value
+@mixin wfw-border-radius-for-corners ($topLeft:"", $topRight:"", $botLeft:"", $botRight:"") {    
+    @if $topLeft != "" {
+        -moz-border-radius-topleft: $topLeft;
+        -webkit-border-top-left-radius: $topLeft;
+        border-top-left-radius: $topLeft;
+    }
+    @if $topRight != "" {
+        -moz-border-radius-topright: $topRight;
+        -webkit-border-top-right-radius: $topRight;
+        border-top-right-radius: $topRight;
+    }
+    @if $botLeft != "" {
+        -moz-border-radius-bottomleft: $botLeft;
+        -webkit-border-bottom-left-radius: $botLeft;
+        border-bottom-left-radius: $botLeft;
+    }
+    @if $botRight != "" {
+        -moz-border-radius-bottomright: $botRight;
+        -webkit-border-bottom-right-radius: $botRight;
+        border-bottom-right-radius: $botRight; 
+    }    
+}
+
+// ** name : wfw-transform
+//  * description : apply transform with psuedo codes
+//  * val : transform value
+@mixin wfw-transform ($val) {
+    -webkit-transform: $val; 
+    -moz-transform: $val;
+    transform: $val;
+}
+
+// Mixins ends

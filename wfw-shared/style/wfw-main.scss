@@ -1,0 +1,62 @@
+/* Global styles starts */
+
+@import 'wfw-mixins';
+@import 'wfw-variables';
+@import 'wfw-reset';  // to normalize the elements styles
+
+body{
+    color: $wfw-base-font-color;
+    line-height: $wfw-base-line-height;
+}
+
+// primeng .ui-widget font style is overridden here
+body, .ui-widget {
+    font-size: $wfw-base-font-size;
+    font-family: $wfw-base-font-family;
+}
+
+// generate the heading styles along with sub headings
+@include wfw-create-headings(h1, 36px);
+@include wfw-create-headings(h2, 30px);
+@include wfw-create-headings(h3, 24px);
+@include wfw-create-headings(h4, 18px);
+@include wfw-create-headings(h5, 14px);
+@include wfw-create-headings(h6, 10px);
+
+.wfw-font-regular {
+    font-family: $wfw-base-font-family;
+    font-weight: normal;
+}
+
+.wfw-font-bold {
+    font-family: $wfw-base-font-family;
+    font-weight: bold;
+}
+
+.wfw-font-regular-italic {
+    font-family: $wfw-base-font-family;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.wfw-font-bold-italic {
+    font-family: $wfw-base-font-family;
+    font-weight: bold;
+    font-style: italic;
+}
+
+a {
+    color: $halliburton-blue;
+    text-decoration: none;
+    &:visited, &:focus, &:active {
+        color: $halliburton-blue;
+    }
+    &:hover {
+        color: $halliburton-blue;
+        text-decoration: underline;
+    }
+}
+
+@import 'wfw-themes';
+
+/* Global styles starts */

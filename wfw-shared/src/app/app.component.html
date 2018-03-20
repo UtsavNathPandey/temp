@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="ui-g-12">
+  <div style="text-align:center">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+
+  <h3>Example Component : theming</h3>
+
+  <h4>Banner(Message) Components:</h4>
+  <wfw-notification></wfw-notification>
+  <div>
+      <button type="button" pButton (click)="showSuccess()" label="Success" class="ui-button-success"></button>
+      <button type="button" pButton (click)="showInfo()" label="Info" class="ui-button-info"></button>
+      <button type="button" pButton (click)="showWarn()" label="Warn" class="ui-button-warning"></button>
+      <button type="button" pButton (click)="showError()" label="Error" class="ui-button-danger"></button>
+      <button type="button" pButton (click)="showEvent()" label="Event"></button>
+      <button type="button" pButton (click)="showMultiple()" label="Multiple"></button>
+      <button type="button" pButton (click)="clear()" icon="fa-close" style="float:right" label="Clear"></button>
+  </div>
+
+  <showcase-form></showcase-form>
+
+  <showcase-menu></showcase-menu>
+
+  <showcase-data-table></showcase-data-table>
+
+  <div class="ui-g-12">
+    <wfw-icon></wfw-icon>
+  </div>
+</div>
