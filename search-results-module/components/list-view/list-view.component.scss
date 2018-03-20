@@ -1,0 +1,28 @@
+@import '~wfw-shared/style/wfw-variables';
+
+.select-all {
+    float: left;
+    align-self: center;
+    padding-left: 30px;
+}
+
+.result-count {
+    padding-right: 8.333%;
+    padding-left: 40px;
+    text-align: left;
+}
+
+:host /deep/ .ui-datalist .ui-datalist-header {
+    background: $halliburton-white;
+    border: none;
+    padding: 0;
+}
+
+:host /deep/ .ui-datalist-content {
+    border: none;
+}
+
+:host /deep/ .ui-datalist .ui-paginator {
+    background: $halliburton-white;
+    border: none;
+}

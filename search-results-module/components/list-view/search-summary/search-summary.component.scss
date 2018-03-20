@@ -1,0 +1,58 @@
+@import '~wfw-shared/style/wfw-mixins';
+@import '~wfw-shared/style/wfw-variables';
+
+:host /deep/ {
+    .ui-carousel-next-button {
+      right: 0px;
+      &::before {
+        content: "\F105"; //content is over-ridden to match the style guide
+      }
+    }
+    .ui-carousel-prev-button {
+      left: 0px;
+      &::before {
+        content: "\F104"; // content is over-ridden to match the style guide
+      }
+    }
+    .ui-carousel-prev-button, .ui-carousel-next-button {
+      position: absolute;
+      transform: translateY(-44%);
+      top: 44%;
+      font-size: 25px;
+      height: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      width: 30px;
+      margin: 0;
+      line-height: 60px;
+      z-index: 1;
+    }
+    .ui-carousel {
+      margin-bottom: 20px;
+    }
+    .ui-carousel-page-link {
+      display: none;
+    }
+    .ui-carousel-header {
+      height: 0;
+      padding: 0;
+      border: none;
+    }
+    .ui-carousel-item {
+      text-align: center;
+      cursor: pointer;
+      margin-right: 30px;
+      background-color: $halliburton-whitish-grey;
+      border-color: $halliburton-dark-grey;
+      border-radius: 0px;
+      
+      .count {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    .ui-carousel-item {
+      margin-left: 0;
+    }
+  }

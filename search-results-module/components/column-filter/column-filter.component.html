@@ -1,0 +1,16 @@
+<div class="column-filter">
+    <i class="fa fa-filter" aria-hidden="true" (click)="colFilterPanel.toggle($event);"></i>
+    <input type="text"
+        class="column-filter-input ui-inputtext ui-widget ui-state-default ui-corner-all"
+        [(ngModel)]="filterText"             
+        (keyup)="filterColumn()"
+    /> 
+</div>
+
+<p-overlayPanel #colFilterPanel appendTo="body">
+    <div class="ui-g filter-panel">
+        <div class="ui-g-12" *ngFor="let fil of columnFilters">
+            <p-radioButton  name="filters" [value]="fil.value" [label]="fil.label" (onClick)="changeFilter(fil.value)"></p-radioButton>                
+        </div>
+    </div>
+</p-overlayPanel>

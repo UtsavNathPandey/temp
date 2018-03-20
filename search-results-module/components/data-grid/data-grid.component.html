@@ -1,0 +1,94 @@
+<wfw-tab-view
+    [tabs]="tabs"
+>
+</wfw-tab-view>
+
+<p-dataTable #dt
+    [value]="rows"
+    [expandableRows]="gridConfig.expandableRows"
+    [rows]="gridConfig.rows"
+    [paginator]="gridConfig.paginator"
+    [alwaysShowPaginator]="true"
+    [lazy]="gridConfig.lazy"
+    [loading]="gridConfig.loading"
+    [totalRecords]="totalRowCount"
+    (onLazyLoad)="lazyLoad($event)"
+    [pageLinks]="gridConfig.pageLinks"
+    [rowsPerPageOptions]="gridConfig.rowsPerPageOptions"
+    [resizableColumns]="gridConfig.resizableColumns"
+    [reorderableColumns]="gridConfig.reorderableColumns"
+    [scrollable]="gridConfig.scrollable"
+    [editable]="gridConfig.editable"
+    (onEditInit)='onEditInit($event)'
+    (onEditCancel)="editCancel($event)"
+    [exportFilename]="excelFileName"
+    (onPage)="getNoOfRecords()"
+    (onHeaderCheckboxToggle)="selectOrUnselectAllResults($event)"
+>
+    <p-column *ngIf="gridConfig.expandableRows && rows" styleClass="drag-false" [style]="{'width':'30px'}" expander="true"></p-column>
+    <p-column *ngIf="gridConfig.columnConfig.selectionMode && rows" styleClass="drag-false" [style]="{'width':'30px'}" [selectionMode]="gridConfig.columnConfig.selectionMode"></p-column>
+    <ng-container *ngFor='let column of gridCols; let i = index;'>
+        <p-column
+            styleClass="wfw-data-column"
+            [field]="column.colName"
+            [header]="column.colDisplayName | uppercase"
+            [sortable]="column.sortable" 
+            [editable]="gridConfig.editable"
+            [filter]="column.filter"
+            [filterMatchMode]="column.filterMatchMode"
+            [filterPlaceholder]="column.filterPlaceholder"
+            *ngIf="!column.hidden"
+        >
+            <ng-template pTemplate="header">
+                {{column.colDisplayName}}
+                <i class="fa fa-ellipsis-v column-chooser-button" aria-hidden="true" (click)="setCurrentlySelectedColumnIndex(i);colToglPnl.toggle($event);"></i>
+            </ng-template>
+            <ng-template *ngIf="column.filter" pTemplate="filter" let-col>
+                <wfw-column-filter [column]="col" (onChange)="filterColumn($event)"></wfw-column-filter>
+            </ng-template>
+            <ng-template let-col let-row="rowData" pTemplate="body">
+              <div *ngIf="row[col.field]" #cell [class]="styleForCell(row[col.field], cell)">{{row[col.field].value || row[col.field]}}</div>
+              <div *ngIf="!row[col.field]"></div>
+            </ng-template>
+            <ng-template *ngIf="column.editable" let-col let-row="rowData" pTemplate="editor">
+                <wfw-cell-editor *ngIf="row[col.field]" [rowData]="row" [colData]="row[col.field]" [colField]="col.field"  [initialValue]="row[col.field].value || row[col.field]" (onCellSave)="editSuccess($event)" (onCellClose)="editCancel($event)"></wfw-cell-editor>
+            </ng-template>
+        </p-column>
+    </ng-container>
+
+    <ng-template pTemplate="rowexpansion">
+        <div class="nested-grid-container">
+            <wfw-data-grid [tabs]="tabs" [rows]="rows" [isNested]="true" [gridCols]="gridCols" [totalRowCount]="totalRowCount" [counter]='counter' [gridHeight]='nestedGridHeight' [gridConfig]="gridConfig"></wfw-data-grid>
+        </div>
+    </ng-template>
+    <p-footer>
+        <div class="ui-g">
+            <div class="ui-g-2">
+                <span class="record-count">{{ getNoOfRecords() }}</span>
+            </div>
+            <div class="ui-g-10">
+                <button class="export-btn" type="button" label="Export XLSX" pButton icon="fa-file-o" iconPos="right" (click)="exportToExcel()"></button>
+            </div>
+        </div>
+    </p-footer>
+</p-dataTable>
+
+<p-overlayPanel #colToglPnl appendTo="body">
+    <wfw-column-settings-button [icon]="'fa-eye-slash'" [label]="'Hide'" (click)="hideCurrentlySelectedColumn($event);colToglPnl.hide();"></wfw-column-settings-button>
+    <wfw-column-settings-button [icon]="'fa-thumb-tack'" [label]="'Column Chooser'" (click)="columnChooserDialogVisible=true;colToglPnl.hide();"></wfw-column-settings-button>
+</p-overlayPanel>
+
+<p-dialog header="Column Chooser" [(visible)]="columnChooserDialogVisible" modal="modal" width="400" [responsive]="true">
+    <div class="column-chooser">
+        <ul>
+            <li *ngFor="let col of gridCols; let i = index;">
+                <span><a class="column-show-hide-link" (click)="toggleColumn(i)">{{col.hidden == true ? 'Show' : 'Hide'}}</a></span>
+                <span class="column-chooser-label">{{ col.colName }}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-container">
+        <button pButton type="button" (click)="columnChooserDialogVisible=false" label="Apply"></button>
+        <button pButton type="button" (click)="columnChooserDialogVisible=false" label="Cancel"></button>
+    </div>
+</p-dialog>

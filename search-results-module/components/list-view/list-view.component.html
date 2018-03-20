@@ -1,0 +1,26 @@
+<wfw-search-summary
+  [summaryTabs]="summaryTabs"
+></wfw-search-summary>
+<p-dataList #dl 
+  [value]="_searchSvc.searchResultRows"
+  [lazy]="true" 
+  (onLazyLoad)="loadData($event)" 
+  [paginator]="true" 
+  [totalRecords]="_searchSvc.totalRowCount" 
+  [rows]="_searchSvc.gridConfig.rows" 
+  [rowsPerPageOptions]="_searchSvc.gridConfig.rowsPerPageOptions"
+  alwaysShowPaginator="true">
+  <p-header>
+      <div class="ui-g">
+        <div class="select-all" *ngIf="_searchSvc.searchResultRows">
+          <p-checkbox (onChange)="selectOrUnselectAllResults($event)"></p-checkbox>          
+        </div>
+        <div class="ui-g-11 result-count">
+          <span>{{ getNoOfRecords() }}</span>
+        </div>
+      </div>
+  </p-header>
+  <ng-template let-item let-i="index" pTemplate="item">
+      <wfw-list-item [result]="item"></wfw-list-item>
+  </ng-template>
+</p-dataList>

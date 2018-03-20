@@ -1,0 +1,66 @@
+@import "~wfw-shared/style/wfw-variables";
+.result-item-checkbox {
+  text-align: center;
+  align-self: center;
+  padding-left: 30px;
+}
+.result-details-header {
+  cursor: pointer;
+  margin-bottom: 0px
+}
+.result-details-desc {
+  overflow: hidden;
+  cursor: pointer;
+  height: 40px; /* two lines */
+  position: relative;
+  margin-top: 5px; 
+}
+.result-details-desc:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 20px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+.more-info {
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+.result-icons span{
+  margin-right:10px;
+}
+:host{
+  /deep/
+   {
+    .icon-cart-default ,.icon-view-log{
+      font-size: 15px;
+    &::before{
+        color :$halliburton-teal;
+    }
+    &:hover::before{
+      color: $halliburton-dark-pink;
+    }
+    &:active::before{
+      color: $halliburton-green;
+    }
+  }
+  }
+}
+.result-item {
+  position: relative;
+}
+
+.result-details {
+  padding-left: 40px;
+
+}
+.optionsBtns {
+  margin-right: 5px;
+}
+.icons{
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+<p-carousel 
+  class="results-summary" 
+  *ngIf="tabs && tabs.length > 0" 
+  [value]="tabs"
+  numVisible="4"
+  responsive="true"
+>
+<ng-template let-tab pTemplate="item">
+    <div [class.tab-selected]="selectedTab == tab.label" class="tab-item" (click)="tab.command($event); selectTab(tab)">
+      <div class="tab-label">{{tab.label}}</div>
+    </div>
+</ng-template>
+</p-carousel>

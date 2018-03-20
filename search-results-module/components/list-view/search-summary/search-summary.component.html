@@ -1,0 +1,14 @@
+<p-carousel 
+  class="results-summary" 
+  *ngIf="summaryTabs && summaryTabs.length > 0" 
+  [value]="summaryTabs"
+  numVisible="4"
+  responsive="true"
+>
+  <ng-template let-summary pTemplate="item">
+      <div class="summary-item" (click)="summary.command($event)">
+        <div class="count">{{summary.count}}</div>
+        <div class="title">{{summary.title}}</div>
+      </div>
+  </ng-template>
+</p-carousel>

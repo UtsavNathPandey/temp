@@ -1,0 +1,22 @@
+<div *ngIf="showHideCarousel" class="carousel-container">
+  <div>
+    <h5 class="doc-header">Documents</h5><i (click)="hideCarousel()" class="fa fa-window-close pull-right" aria-hidden="true"></i>
+    <div class="doc-pager">
+      Page <b>{{from}}</b> of  <b>{{to}}</b>
+    </div>
+  </div>
+  <div class="doc-container">
+  <p-carousel #carousel (onPage)="onCarouselChange()" [(numVisible)]="pageSize" headerText="Documents" [value]="docsData">
+    <ng-template let-doc pTemplate="item">
+        <div class="doc-item" (click)="showDocPreview(doc.name,doc.url)" >
+            <div >
+              <i class="fa fa-file fa-3x" aria-hidden="true"></i>
+            </div>
+            <div >
+                {{doc.name}}
+            </div>
+        </div>
+    </ng-template>
+  </p-carousel>
+</div>
+</div>

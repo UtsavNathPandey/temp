@@ -1,0 +1,18 @@
+<div *ngIf="result" class="ui-g result-item">
+  <div class="result-item-checkbox">
+    <p-checkbox [value]="result.id" [(ngModel)]="_searchSvc.selectedResults"></p-checkbox>
+  </div>
+  <div class="ui-g-11 result-details">
+    <h4 class="result-details-header" (click)="showPreview()">{{ getTitle() }}</h4>
+    <p class="result-details-desc" (click)="showPreview()">{{ getDescription() }}</p>
+    <a href="#" class="more-info" (click)="showPreview()">More</a>
+    <div class="optionsBtns"></div>
+    <div class="result-icons">
+        <ng-container *ngFor="let action of (this._searchSvc.actionsResponsive | async)?.actions.defaultActions.action; let i = index">
+          <span *ngIf="checkActionCondition(action.mappedItems.view, action.mappedItems.condition)" [title]="action.title"
+            class="{{action.icon}} listViewColumnActionItem listViewColumnActionItemActive" (click)="actionLinkClicked(action)"></span>
+        </ng-container>
+    </div>
+  </div>
+  <wfw-docs-carousel class="ui-g-12" (showHideCarouselChange)="hideCarousel($event)" [showHideCarousel]="showCarousel" [docsData]="" ></wfw-docs-carousel>
+</div>

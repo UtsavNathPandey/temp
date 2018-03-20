@@ -1,0 +1,14 @@
+<div class="ui-g">
+<div class="ui-g-12">
+<div class="ui-g-4 ui-md-4">
+  <p-dropdown *ngIf="viewDropdownOptions.length > 0" [options]="viewDropdownOptions" [(ngModel)]="_searchSvc.selectedView" placeholder="View"></p-dropdown>
+  <p-dropdown *ngIf="sortFieldOptions.length > 0 && _searchSvc.selectedView == 'List View'" [options]="sortFieldOptions" (onChange)="applySort($event)" placeholder="Sort by"></p-dropdown>  
+</div>
+<div class="ui-g-4 ui-md-4 pull-right global-icons">
+    <span role="button" class="icon-view-log" (click)="launchLogViewer()"></span>
+    <span role="button" class="icon-cart-default" (click)="addToCart()"></span>
+    <span role="button"  class="icon-search-default" (click)="backToSearch()"></span>
+</div>
+</div>
+</div>
+

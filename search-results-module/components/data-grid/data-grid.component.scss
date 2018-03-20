@@ -1,0 +1,137 @@
+:host /deep/ .wfw-data-column {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+:host /deep/ .ui-tabmenu .ui-tabmenu-nav {
+    overflow-y: hidden;
+    white-space: nowrap;
+    overflow-x: hidden;
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+:host /deep/ .ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem {
+    float: none;
+    display: inline-block;
+}
+
+.nested-grid-container {
+    width: calc(100vw - 40px);
+    padding-left: 40px;
+}
+
+.export-btn {
+    float: right;
+}
+
+.record-count {
+    float: left;
+}
+
+:host /deep/ .data-invalid {
+    border-color: yellow;
+    border-width: 2px;
+    background: rgba(255, 255, 0, 0.25);
+}
+
+:host /deep/ .data-empty {
+    border-color: red;
+    border-width: 2px;
+    background-color: rgba(218, 77, 77, 0.25)
+}
+
+.btn-container {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.column-show-hide-link {
+	cursor: pointer;
+	color: #16679f;
+}
+
+.column-chooser {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.column-chooser ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.column-chooser ul li {
+    padding: 15px;
+    border-bottom: 2px solid;
+    border-bottom-color: gray;
+}
+
+.column-chooser-label {
+    padding-left: 15%;
+}
+
+.column-chooser-button {
+	float: right;
+	margin-top: 3px;
+}
+
+:host /deep/ .ui-datatable {
+    .ui-paginator {
+        .ui-datatable-no-of-rec {
+            float: left;
+            padding: 7px;
+        }
+        .ui-paginator-rpp-options {
+            float: right;
+        }
+    }
+}
+
+:host /deep/ .ui-datatable .ui-datatable-data > tr > td {
+    border-width: 1px;
+}
+
+:host /deep/ .ui-datatable .ui-datatable-thead > tr > th {
+    border-width: 1px;
+}
+
+:host /deep/  .ui-datatable .ui-datatable-thead > tr > th.drag-false {
+    padding: 5px;
+}
+
+:host /deep/  .ui-datatable .ui-datatable-data > tr > td.drag-false {
+    padding: 5px;
+}
+
+:host /deep/ .ui-datatable .ui-paginator {
+    border-width: 1px;
+}
+
+
+:host /deep/ .yellow {
+  border-color: yellow;
+  border-width: 2px;
+  background: yellow;
+}
+
+:host /deep/ .red {
+  border-color: red;
+  border-width: 2px;
+  background-color: red;
+}
+:host /deep/ .orange {
+border-color: orange;
+border-width: 2px;
+background-color: orange;
+}
+
+:host /deep/ .blue {
+  border-color: blue;
+  border-width: 2px;
+  background-color: blue;
+  }

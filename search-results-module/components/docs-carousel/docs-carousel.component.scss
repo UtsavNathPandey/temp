@@ -1,0 +1,72 @@
+
+@import '~wfw-shared/style/wfw-mixins';
+@import '~wfw-shared/style/wfw-variables';
+
+$doc-bg-color: $halliburton-whitish-grey;
+.carousel-container {
+  background-color: $doc-bg-color;
+  padding: 10px 5px;
+  .doc-header {
+    display: inline-block;
+    margin: 0 0 10px;
+  }
+  .doc-pager {
+    font-size: 12px;
+    padding-left: 20px;
+  }
+  .doc-container {
+    position: relative;
+    .doc-item {
+      cursor: pointer;
+    }
+  }
+  .fa-window-close {
+    margin: 0 3px 0 0;
+    color: $halliburton-mid-pink;
+    cursor: pointer;
+  }
+}
+
+:host /deep/ {
+  .ui-carousel-next-button {
+    right: 10px;
+    &::before {
+      content: "\F0DA"; //content is over-ridden to match the style guide
+    }
+  }
+  .ui-carousel-prev-button {
+    left: 10px;
+    &::before {
+      content: "\F0D9"; // content is over-ridden to match the style guide
+    }
+  }
+  .ui-carousel-prev-button, .ui-carousel-next-button {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    font-size: 25px;
+  }
+  .ui-carousel{
+    padding: 0 35px;
+  }
+  .ui-carousel-page-link {
+    display: none;
+  }
+  .ui-carousel-header {
+    height: 0;
+    padding: 0;
+    border: none;
+  }
+  .ui-carousel, .ui-carousel-viewport, .ui-carousel-item {
+    background-color: $doc-bg-color;
+    border: none;
+  }
+  .ui-carousel-item {
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .ui-carousel-item {
+    margin-left: 0;
+  }
+}

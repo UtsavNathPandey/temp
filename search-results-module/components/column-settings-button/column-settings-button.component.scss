@@ -1,0 +1,28 @@
+.column-hidden-button-box {
+    float: left;
+    height: 75px;
+    width: 75px;
+    border: 1px solid #16679f;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 0 5px 8px 0;
+    color: #16679f;
+    cursor: pointer;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.column-hidden-button-box:hover {
+	background-color: #c8c7c3;
+}
+
+.icon {
+    flex-basis: 50%;
+}
+
+// .column-label {
+    
+// }

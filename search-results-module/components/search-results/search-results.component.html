@@ -1,0 +1,24 @@
+<wfw-search-results-header></wfw-search-results-header>
+
+<wfw-notification></wfw-notification>
+<ng-container [ngSwitch]="_searchSvc.selectedView">
+    <wfw-list-view *ngSwitchCase="'List View'"
+        [summaryTabs]="summaryTabs"  
+        (allRecordsChecked)="selectOrUnselectAllRecords($event)"
+    ></wfw-list-view>
+    <wfw-data-grid *ngSwitchCase="'Grid View'"
+        [gridConfig]="_searchSvc.gridConfig"
+        [tabs]="tabs"
+        [rows]="searchResultRows"
+        [gridCols]="searchResultCols"
+        [queryText]="_searchSvc.currentSearchQuery.q"
+        [totalRowCount]="_searchSvc.totalRowCount"
+        (onEdit)="onEdit($event)"
+        (onEditComplete)="onEditComplete($event)"
+        (onEditCancel)="onEditCancel($event)"
+        (onLazyLoadTriggered)="lazyLoadData($event)"
+        (allRecordsChecked)="selectOrUnselectAllRecords($event)"
+    >
+    </wfw-data-grid>
+
+</ng-container>
