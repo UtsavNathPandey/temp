@@ -1,0 +1,77 @@
+
+:host /deep/ .advance-search-form-cls {
+
+  min-width: 700px;
+
+  .ui-dropdown {
+    width: 100%;
+  }
+
+  .ui-multiselect {
+    width: 100%;
+  }
+
+  .arrow-up {
+    width: 0px;
+    height: 0px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ccc;
+    position: absolute;
+    top: -9px;
+    right: 4px;
+  }
+  .query-txt-cls {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .close-overlay-icon-cls {
+    text-align: right;
+    padding-right:0;
+    cursor: pointer;
+    font-size: 22px;
+    padding-top: 0;
+  }
+  .head-txt-cls {
+    font-weight: bold;
+    padding-left: 15px;
+  }
+  .multiselect-options-cls {
+    ::ng-deep .ui-multiselect {
+      width: 100%;
+    }
+  }
+  .condition-wrapper-cls {
+    .condition-componenant-wrapper-cls {
+      float: right;
+    }
+    .close-icon-cls {
+      padding-top: 0;
+      cursor: pointer;
+      span {
+        font-size: 23px;
+        color: red;
+      }
+    }
+    .pad-0 {
+      padding: 0;
+    }
+  }
+
+  .add-condition-btn-cls {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: darkgreen;
+    padding-left: 9px;
+  }
+
+  .add-condition-btn-cls:disabled {
+    opacity: 0.5;
+  }
+
+  .btm-btn-container-cls {
+    text-align: right;
+  }
+}

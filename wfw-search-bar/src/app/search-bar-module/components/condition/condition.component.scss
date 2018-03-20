@@ -1,0 +1,46 @@
+
+.condition-form-cls {
+  padding: 0;
+
+  .pad-top-lft-0 {
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  ::ng-deep .ui-dropdown.ng-invalid {
+    border-bottom: 1px solid red;
+  }
+
+  ::p-dropdown.ng-invalid {
+    border-bottom: 1px solid red;
+  }
+
+  ::ng-deep .ui-dropdown {
+    width: 100% !important; //ui dropdown applies the inline style so we had to override it
+
+    .ui-dropdown-label {
+      font-size: 14px;
+    }
+    .ui-dropdown-trigger {
+      border-left: none;
+      font-size: 14px;
+    }
+    .ui-dropdown-panel {
+      z-index: 10;
+
+      .ui-dropdown-item {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  ::ng-deep .ui-inputtext {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.dropDownCls {
+  width: 100%;
+}

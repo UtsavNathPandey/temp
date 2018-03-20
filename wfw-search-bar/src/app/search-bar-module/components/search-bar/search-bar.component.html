@@ -1,0 +1,16 @@
+<div class="search-form">
+  <div class="ui-inputgroup">
+    <label hidden aria-hidden=true id="search">Basic Search</label>
+    <input (keyup.enter)="executeSearch()" [(ngModel)]="search" type="text" for="search" pInputText placeholder="Keyword">
+    <button (click)="executeSearch()" title="search" pButton type="button" icon="icon-search-default" class="ui-button-secondary btn-grey"></button>
+  </div>
+  <div>
+    <button (click)="clearSearch()" title="clear search" pButton type="button" icon="fa-refresh" class="ui-button-secondary btn-grey"></button>
+  </div>
+  <div class="overlayPanelCnt" #advanceSearchPanelContainer>
+    <span (click)="advanceSearchPanel.toggle($event)" class="fa fa-search search-icon-cls" aria-hidden="true"></span>
+    <p-overlayPanel #advanceSearchPanel [appendTo]="advanceSearchPanelContainer">
+      <wfw-advanced-search [searchOverlay]="advanceSearchPanel"></wfw-advanced-search>
+    </p-overlayPanel>
+  </div>
+</div>

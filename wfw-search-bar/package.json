@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "wfw-search-bar@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+        "scope": null,
+        "escapedName": "wfw-search-bar",
+        "name": "wfw-search-bar",
+        "rawSpec": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+        "spec": "ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+        "type": "git"
+      },
+      "D:\\Project Repo New\\wfw-search-filters"
+    ]
+  ],
+  "_from": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+  "_id": "wfw-search-bar@5000.12.2-16",
+  "_inCache": true,
+  "_location": "/wfw-search-bar",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "wfw-search-bar@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+    "scope": null,
+    "escapedName": "wfw-search-bar",
+    "name": "wfw-search-bar",
+    "rawSpec": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+    "spec": "ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+    "type": "git"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#94315003429c5cfa487436e514e92d0ca53abab6",
+  "_shasum": "432fdbd6dd3bf60bfb949c2ff2e317d5ee57de00",
+  "_shrinkwrap": null,
+  "_spec": "wfw-search-bar@git+ssh://git@git.openearth.community:BoreHoleDataMgmt/wfw-search-bar.git#develop",
+  "_where": "D:\\Project Repo New\\wfw-search-filters",
+  "dependencies": {},
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.",
+  "devDependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/cli": "1.4.2",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/compiler-cli": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/language-service": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.1.1",
+    "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "primeng": "^4.2.1",
+    "protractor": "~5.1.2",
+    "rxjs": "^5.4.2",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.3.2",
+    "typescript": "~2.3.3",
+    "wfw-shared": "<=5000.12.2-x",
+    "zone.js": "^0.8.14"
+  },
+  "gitHead": "94315003429c5cfa487436e514e92d0ca53abab6",
+  "license": "MIT",
+  "name": "wfw-search-bar",
+  "optionalDependencies": {},
+  "publishConfig": {
+    "registry": "https://artifacts.repo.openearth.community/artifactory/api/npm/boreholedatamgmt-npm/"
+  },
+  "readme": "# WFWSearchBar\r\n\r\nThis project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.\r\n\r\n## Development server\r\n\r\nRun `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.\r\n\r\n## Code scaffolding\r\n\r\nRun `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.\r\n\r\n## Build\r\n\r\nRun `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.\r\n\r\n## Running unit tests\r\n\r\nRun `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).\r\n\r\n## Running end-to-end tests\r\n\r\nRun `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).\r\nBefore running the tests make sure you are serving the app via `ng serve`.\r\n\r\n## Further help\r\n\r\nTo get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).\r\n",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "start": "ng serve",
+    "test": "ng test"
+  },
+  "version": "5000.12.2-16"
+}

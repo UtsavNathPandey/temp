@@ -1,0 +1,45 @@
+
+<div class="advance-search-form-cls">
+  <div class="arrow-up"></div>
+  <div class="ui-g-12 ui-md-12">
+    <div class="ui-g-11 query-txt-cls">
+      Query Builder
+    </div>
+    <div class="ui-g-1 close-overlay-icon-cls">
+      <span class="fa fa-close" (click)="advanceSearchOverlay.hide()"></span>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-12 multiselect-options-cls">
+    <div class="ui-g-5">
+      <p-multiSelect [options]="dataSources" [(ngModel)]="selectedDataSources" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+    </div>
+    <div class="ui-g-5">
+      <p-multiSelect [options]="dataTypes" [(ngModel)]="selectedDataTypes" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-md-12 head-txt-cls">Conditions</div>
+  <div class="ui-g-12 ui-md-12">
+    <form [formGroup]="conditionForm">
+      <div *ngIf="queryConditions">
+        <div class="condition-wrapper-cls ui-g" *ngFor='let item of itemsFormArray.controls; let i = index;'>
+          <div class="ui-g-1 close-icon-cls">
+            <span (click)=deleteCondition(i) class="fa fa-close"></span>
+          </div>
+          <div class="ui-g-11 pad-0">
+            <wfw-condition [idParent]=i [item]=item [conditionOptions]=queryConditions></wfw-condition>
+          </div>
+        </div>
+        <button class="add-condition-btn-cls" [ngClass]="{disabled: !conditionForm.valid}" (click)="addCondition()" [disabled]="!conditionForm.valid"><i class="fa fa-plus"></i></button>
+      </div>
+    </form>
+  </div>
+  <div class="ui-g-12 ui-md-12 btm-btn-container-cls">
+    <div class="ui-g-10">
+      <button pButton type="button" (click)="advanceSearchClick()" label="Search" class="ui-button-primary"></button>
+    </div>
+    <div class="ui-g-2">
+      <button pButton type="button" (click)="advanceSearchOverlay.hide()" label="Cancel" class="ui-button-secondary"></button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="ui-g-12 ui-md-12 condition-form-cls" [formGroup]=itemFormName>
+  <div class="ui-g-3 pad-top-lft-0">
+    <p-dropdown [autoWidth]="false" placeholder="Select and/or" [id]="'andOrConditionSelect'+idFromParent" [options]="componentDataToDisplay.select.options"
+      [(ngModel)]="selectedAndOrModel" formControlName="andOrConditionSelectName"></p-dropdown>
+  </div>
+  <div class="ui-g-3 pad-top-lft-0">
+    <p-dropdown [autoWidth]="false" placeholder="Select Field" [id]="'companyNamesSelect'+idFromParent" [options]="componentDataToDisplay.companyName.options"
+      [(ngModel)]="selectedCompanyNamesModel" formControlName="companyNamesSelectName"></p-dropdown>
+  </div>
+  <div class="ui-g-3 pad-top-lft-0">
+    <p-dropdown [autoWidth]="false" styleClass="dropDownCls" placeholder="Select Condition" [id]="'andOrConditionSelect'+idFromParent" [options]="componentDataToDisplay.selectCondition.options"
+      [(ngModel)]="selectConditionModel" formControlName="selectConditionsName"></p-dropdown>
+  </div>
+  <div class="ui-g-3 pad-top-lft-0">
+    <input type="text" placeholder="Enter Value" [id]="'valueName'+idFromParent" pInputText [(ngModel)]="valueFieldModel" formControlName="valueName"
+    />
+  </div>
+</div>

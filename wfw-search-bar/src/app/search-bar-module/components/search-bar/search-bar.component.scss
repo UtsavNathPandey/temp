@@ -1,0 +1,67 @@
+.overlayPanelCnt {
+  .search-icon-cls {
+    cursor: pointer;
+    width: 29px;
+    height: 35px;
+    font-size: 20px;
+    padding-top: 8px;
+    text-align: center;
+  }
+  ::ng-deep .ui-overlaypanel {
+    width: 50%;
+    min-width: 600px;
+
+    .ui-overlaypanel-content {
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+:host{
+  .btn-grey{
+    background-color: #EDEFF1;
+  }
+  .search-form {
+    float:right;
+    display: flex;
+  }
+  .search-form div {
+    padding-right: 5px;
+    display: flex;
+  }
+  .ui-inputtext {
+    padding: 0.55em;
+    width:100%;
+    border:1px solid #AEB1AF;
+    border-radius: 0;
+    &:focus{
+      border-color:#94C4E0;
+    }
+  }
+  .padding-left-zero{
+    padding-left:0;
+  }
+  .padding-right-zero{
+    padding-right:0;
+  }
+  .ui-button-icon-only{
+    font-size:22px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    &:hover{
+      color: #fff;
+    }
+    &:active{
+      color:#84AF40;
+    }
+  }
+  /deep/ .icon-search-default{
+    &:hover::before{
+      color: #fff;
+    }
+    &:active::before{
+      color:#84AF40;
+    }
+  }
+}
